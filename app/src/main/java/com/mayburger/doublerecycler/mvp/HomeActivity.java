@@ -16,10 +16,12 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity implements HomeView {
 
-    @BindView(R.id.recycler_1)
+    @BindView(R.id.recycler_open)
     RecyclerView recycler_open;
-    @BindView(R.id.recycler_2)
+    @BindView(R.id.recycler_recommended)
     RecyclerView recycler_recommended;
+    @BindView(R.id.recycler_awardee)
+    RecyclerView recycler_awardee;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         HomePresenter presenter = new HomePresenter(this);
         presenter.getOpen();
         presenter.getRecommended();
+        presenter.getAwardee();
     }
 
     @Override
@@ -46,5 +49,13 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recycler_recommended.setLayoutManager(layoutManager);
+    }
+
+    @Override
+    public void onGetAwardee(List<Scholarship> data) {
+        recycler_awardee.setAdapter(new ScholarshipAdapter(this, data));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recycler_awardee.setLayoutManager(layoutManager);
     }
 }

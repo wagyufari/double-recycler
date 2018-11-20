@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface HomeView {
     public void onGetOpen(List<Scholarship> data);
-
     public void onGetRecommended(List<Scholarship> data);
+    public void onGetAwardee(List<Scholarship> data);
 }

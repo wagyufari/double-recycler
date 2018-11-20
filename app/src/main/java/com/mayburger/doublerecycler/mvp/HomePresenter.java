@@ -33,5 +33,13 @@ public class HomePresenter {
         data.add(new Scholarship("Beasiswa StuNed di Belanda", "15 Desember 2018", "S2, S3", "Belanda"));
         view.onGetRecommended(data);
     }
+    public void getAwardee(){
+        ArrayList<Scholarship> data = new ArrayList<>();
+        data.add(new Scholarship("Beasiswa Chevening di Inggris", "6 November 2018", "Master (S2)", "Inggris"));
+        data.add(new Scholarship("Beasiswa StuNed di Belanda", "15 Desember 2018", "S2, S3", "Belanda"));
+        data.add(new Scholarship("Beasiswa Chevening di Inggris", "6 November 2018", "Master (S2)", "Inggris"));
+        data.add(new Scholarship("Beasiswa StuNed di Belanda", "15 Desember 2018", "S2, S3", "Belanda"));
+        view.onGetAwardee(data);
+    }
 
 }
