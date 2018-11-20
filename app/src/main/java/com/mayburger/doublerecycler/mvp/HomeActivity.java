@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.mayburger.doublerecycler.R;
+import com.mayburger.doublerecycler.adapter.AwardeeAdapter;
 import com.mayburger.doublerecycler.model.Scholarship;
 import com.mayburger.doublerecycler.adapter.ScholarshipAdapter;
 
@@ -53,7 +54,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 
     @Override
     public void onGetAwardee(List<Scholarship> data) {
-        recycler_awardee.setAdapter(new ScholarshipAdapter(this, data));
+        recycler_awardee.setAdapter(new AwardeeAdapter(this, data));
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recycler_awardee.setLayoutManager(layoutManager);

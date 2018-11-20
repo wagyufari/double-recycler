@@ -27,12 +27,12 @@ import butterknife.ButterKnife;
  * Created by Mayburger on 10/19/17.
  */
 
-public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.ViewHolder> {
+public class AwardeeAdapter extends RecyclerView.Adapter<AwardeeAdapter.ViewHolder> {
 
     private Activity mContext;
     private List<Scholarship> mData;
 
-    public ScholarshipAdapter(Activity mContext, List<Scholarship> mData) {
+    public AwardeeAdapter(Activity mContext, List<Scholarship> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
@@ -41,25 +41,25 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext)
-                .inflate(R.layout.row_scholarship, parent, false);
+                .inflate(R.layout.row_awardee, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        holder.name.setText(mData.get(position).getName());
-        holder.deadline.setText(mData.get(position).getDeadline());
-        holder.degree.setText(mData.get(position).getDegree());
-        holder.location.setText(mData.get(position).getLocation());
-        Glide.with(mContext).load("https://dummyimage.com/640x4:3/").apply(new RequestOptions().centerCrop()).into(holder.image);
-        holder.card.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, DetailActivity.class);
-                intent.putExtra(mContext.getString(R.string.data_intent), mData.get(position));
-                mContext.startActivity(intent);
-            }
-        });
+//        holder.name.setText(mData.get(position).getName());
+//        holder.deadline.setText(mData.get(position).getDeadline());
+//        holder.degree.setText(mData.get(position).getDegree());
+//        holder.location.setText(mData.get(position).getLocation());
+        Glide.with(mContext).load("https://dummyimage.com/640x4:3/").apply(new RequestOptions().centerCrop()).apply(new RequestOptions().circleCrop()).into(holder.image);
+//        holder.card.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(mContext, DetailActivity.class);
+//                intent.putExtra(mContext.getString(R.string.data_intent), mData.get(position));
+//                mContext.startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -69,20 +69,8 @@ public class ScholarshipAdapter extends RecyclerView.Adapter<ScholarshipAdapter.
 
 
     class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.name)
-        TextView name;
-        @BindView(R.id.deadline)
-        TextView deadline;
-        @BindView(R.id.degree)
-        TextView degree;
-        @BindView(R.id.location)
-        TextView location;
         @BindView(R.id.image)
         ImageView image;
-        @BindView(R.id.card)
-        CardView card;
-
 
         public ViewHolder(View itemView) {
             super(itemView);
