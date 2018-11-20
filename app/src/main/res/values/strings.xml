@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DoubleRecycler</string>
+    <string name="deadline_dummy">Deadline 6 November 2018</string>
+    <string name="scholarship_dummy">Beasiswa Jardines</string>
+    <string name="degree_dummy">Master (S2)</string>
+    <string name="location_dummy">Inggris</string>
+    <string name="data_intent">data_intent</string>
+</resources>
