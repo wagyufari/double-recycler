@@ -5,4 +5,9 @@
     <string name="degree_dummy">Master (S2)</string>
     <string name="location_dummy">Inggris</string>
     <string name="data_intent">data_intent</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_explore">Telusuri</string>
 </resources>

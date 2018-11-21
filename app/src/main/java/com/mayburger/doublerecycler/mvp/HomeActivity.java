@@ -1,9 +1,13 @@
 package com.mayburger.doublerecycler.mvp;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.mayburger.doublerecycler.R;
 import com.mayburger.doublerecycler.adapter.AwardeeAdapter;
@@ -23,17 +27,36 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     RecyclerView recycler_recommended;
     @BindView(R.id.recycler_awardee)
     RecyclerView recycler_awardee;
+    @BindView(R.id.navigation)
+    BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
         HomePresenter presenter = new HomePresenter(this);
         presenter.getOpen();
         presenter.getRecommended();
         presenter.getAwardee();
+        initBottomNavigation();
+    }
+
+    void initBottomNavigation() {
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.home:
+                        Toast.makeText(HomeActivity.this, "Home", Toast.LENGTH_SHORT).show();
+                        return true;
+                    case R.id.explore:
+                        Toast.makeText(HomeActivity.this, "Explore", Toast.LENGTH_SHORT).show();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override
