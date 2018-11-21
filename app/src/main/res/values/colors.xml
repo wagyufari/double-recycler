@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#fff</color>
     <color name="colorBlack">#000</color>
+    <color name="dim_gray">#696969</color>
+    <color name="greyIndicator">#c6c6c6</color>
 </resources>
