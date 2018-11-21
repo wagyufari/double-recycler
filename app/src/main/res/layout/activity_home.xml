@@ -16,15 +16,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_8dp"
             android:background="@color/colorPrimary"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/search"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/dimen_8dp"
+                android:layout_weight="1"
                 android:background="@drawable/curved_white"
                 android:drawableLeft="@drawable/ic_search"
                 android:drawablePadding="@dimen/dimen_8dp"
@@ -38,6 +39,25 @@
                 android:textColor="@color/dim_gray"
                 android:textColorHint="@color/greyIndicator"
                 android:textSize="@dimen/text_14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.5"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:padding="@dimen/dimen_4dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_notifications_white" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:padding="@dimen/dimen_4dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_bookmark_white" />
+            </LinearLayout>
         </LinearLayout>
 
 
